@@ -1,0 +1,33 @@
+[
+    {
+        "link": "https://ballchasing.com/api/replays/4ed51872-8d86-48a4-b18f-3614b9e28f4d",
+        "blue": {
+            "players": [
+                {
+                    "name": "smashy",
+                    "platform": "steam",
+                    "id": "76561199026492829"
+                },
+                {
+                    "name": "Primix",
+                    "platform": "steam",
+                    "id": "76561199026000338"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "Radosin",
+                    "platform": "steam",
+                    "id": "76561199009010912"
+                },
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                }
+            ]
+        }
+    }
+]
