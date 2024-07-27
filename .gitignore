@@ -1,5 +1,6 @@
 .env
-requirements.txt
-/venv/
-/recordings/
-/__pycache__/
+/venv
+/recordings
+/__pycache__
+/edits
+/config
