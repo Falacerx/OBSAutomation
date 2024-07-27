@@ -118,14 +118,14 @@ async def wait_for_message(client):
     client.event_queue.task_done()
     return message
 
-async def process_replays(group_url, player, rl_client):
+async def process_replays(player, rl_client):
     options = webdriver.ChromeOptions()
     options.add_argument("headless")
     driver = webdriver.Chrome(options=options)
 
     with open("pros.json", "r") as f:
         players = json.load(f)
-    group_id = group_url.split("/")[-1]
+    group_id = players[player]['group_id']
 
     replays = get_replays(group_id)
 

@@ -76,12 +76,20 @@ async def main():
     rl_client = RLWebSocketClient(f"ws://{RL_HOST}:{RL_PORT}", event_queue)
     asyncio.create_task(rl_client.connect())
 
-    player = sys.argv[1]  
-    group_url = sys.argv[2]
+    valid_players = ["Zen", "Dark", "Vatira", "Rw9"]
+    if len(sys.argv) < 2:
+        print("Please provide a player name.")
+        return
+    
+    player = sys.argv[1]
+    if player not in valid_players:
+        print("Invalid player name.")
+        return
+    
     recording_directory = setup_recording_directory(player)
     finished_directory = setup_finished_directory(player)
             
-    await process_replays(group_url, player, rl_client)
+    await process_replays(player, rl_client)
 
     video_paths = [f"{recording_directory}/{f}" for f in os.listdir(recording_directory) if f.endswith(".mp4")]
     valid_groups = group_videos(video_paths)
