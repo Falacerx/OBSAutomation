@@ -1,21 +1,11 @@
 import asyncio
 from datetime import datetime
-import json
-import re
 import shutil
 import sys
-import time
 import uuid
-import requests
 import os
-from database import add_video, update_recording_with_video_info
+from database import update_recording_with_video_info
 import edit
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-import pyautogui
-from pywinauto import findwindows
-import pywinauto
-import threading
 from moviepy.editor import VideoFileClip
 from itertools import combinations
 
@@ -59,7 +49,7 @@ def get_video_duration(file_path):
         return None
     
 def group_videos(video_paths):
-    min_duration = 10 * 60
+    min_duration = 9 * 60
     max_duration = 15 * 60
 
     valid_groups = []

@@ -142,22 +142,22 @@ async def process_replays(player, rl_client):
             continue
         replay_url = replay['link'].replace("api/replays", "replay")
 
-        team_left = "/".join([sanitize(p['name']) for p in replay['blue']['players']])
-        team_right = "/".join([sanitize(p['name']) for p in replay['orange']['players']])
+        # team_left = "TEAM 1" # "/".join([sanitize(p['name']) for p in replay['blue']['players']])
+        # team_right = "TEAM 2" #"/".join([sanitize(p['name']) for p in replay['orange']['players']])
 
-        bring_barl_to_foreground()
-        time.sleep(1)
+        # bring_barl_to_foreground()
+        # time.sleep(1)
         
-        def replace(text):
-            pyautogui.hotkey('ctrl', 'a')
-            pyautogui.press('delete')
-            pyautogui.write(text, interval=0.05)
+        # def replace(text):
+        #     pyautogui.hotkey('ctrl', 'a')
+        #     pyautogui.press('delete')
+        #     pyautogui.write(text, interval=0.05)
 
-        pyautogui.click(x=700, y=510)
-        replace(team_left)
-        for _ in range(4):
-            pyautogui.press('tab', interval=0.05)
-        replace(team_right)
+        # pyautogui.click(x=700, y=510)
+        # replace(team_left)
+        # for _ in range(4):
+        #     pyautogui.press('tab', interval=0.05)
+        # replace(team_right)
 
         driver.get(replay_url)
         

@@ -2,6 +2,8 @@ from datetime import datetime
 import os
 import subprocess
 import json
+import imgkit
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 from database import add_video
 
@@ -22,10 +24,94 @@ def get_video_duration(video_path):
     except Exception as e:
         print(f"Error getting duration for {video_path}: {e}")
         return None
+    
+def render_text(top, bottom, font_path, font_family_name, shadow_offset, shadow_color, shadow_blur, text_color, output_file):
+    absolute_font_path = os.path.abspath(font_path)
+    html_content = f'''
+    <html>
+    <head>
+        <style>
+            @font-face {{
+                font-family: '{font_family_name}';
+                src: url('file://{absolute_font_path}') format('opentype');
+            }}
+            body, html {{
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }}
+            .text {{
+                font-family: '{font_family_name}';
+                color: {text_color};
+                text-shadow: {shadow_offset[0]}px {shadow_offset[1]}px {shadow_blur}px {shadow_color};
+                position: relative;
+                text-align: center;
+                padding: 0;
+            }}
+            .top-text {{
+                font-size: {top["size"]}px;
+                top: 34%;
+            }}
+            .bottom-text {{
+                font-size: {bottom["size"]}px;
+                top: 27.7%;
+            }}
+        </style>
+    </head>
+    <body>
+        <div class="text top-text">{top["text"]}</div>
+        <div class="text bottom-text">{bottom["text"]}</div>
+    </body>
+    </html>
+    '''
+    
+    options = {
+        'format': 'png',
+        'width': 1920,
+        'height': 1080,
+        'transparent': ''
+    }
+    
+    imgkit.from_string(html_content, output_file, options=options)
+    
+def text_pre_processing(player, n_replays):
+    texts = [
+        {
+            "top":{
+                "text": f"GAME {i}",
+                "size": 150
+            },
+            "bottom": {
+                "text": f"{player.upper()} POV",
+                "size": 100
+            }
+        } for i in range(1, n_replays+1)
+    ]
+
+    font_path = "./fonts/Mont-HeavyDEMO.otf"
+    font_family_name = "Mont Heavy DEMO"
+    text_color = "rgb(255, 255, 255)"
+    shadow_color = "rgba(0, 0, 0, 0.9)"
+    shadow_offset = (5, 5)
+    shadow_blur = 20
+
+    images = []
+    for i, text_obj in enumerate(texts):
+        result_file = f"./text_images/text_{i}.png"
+        render_text(text_obj["top"], text_obj["bottom"], font_path, font_family_name, shadow_offset, shadow_color, shadow_blur, text_color, result_file)
+        images.append(result_file)
+
+    return images
 
 def edit_videos(files, output_file, player, video_title, video_id):
-    font_path = "./fonts/impact.ttf"
     durations = { file: get_video_duration(file) for file in files }
+
+    images = text_pre_processing(player, len(files))
 
     xfades = {}
     text_starts = {}
@@ -42,7 +128,8 @@ def edit_videos(files, output_file, player, video_title, video_id):
 
     complex = """[0:v]trim=start=0.5,setpts=PTS-STARTPTS[vx0];
         """
-    trim_fmt = """[vx{v_num}]drawtext=fontfile={font}:text='GAME {game_num}':fontsize=110:fontcolor=ffffff:alpha='if(lt(t,{fade_in}),0,if(lt(t,{faded_in_end}),(t-{fade_in})/{fade_in_duration},if(lt(t,{fade_out}),1,if(lt(t,{fade_out_end}),({fade_out_duration}-(t-{fade_out}))/{fade_out_duration},0))))':x=(w-text_w)/2:y=(h-text_h)/2[v{v_num}text];
+    trim_fmt = """[{text_num}:v]fade=in:st={fade_in}:d={fade_in_duration}:alpha=1,fade=out:st={fade_out}:d={fade_out_duration}:alpha=1[v{v_num}ov];
+                [vx{v_num}][v{v_num}ov]overlay=shortest=1:x=0:y=0:format=auto[v{v_num}text];
         """
     setpts_fmt = """[{v_num}:v]setpts=PTS-STARTPTS[v{v_num}];
         """
@@ -50,12 +137,11 @@ def edit_videos(files, output_file, player, video_title, video_id):
         """
     for i, file in enumerate(files):
         if i > 0:
-            complex += setpts_fmt.format(v_num=i)
-            complex += xfade_fmt.format(v_num=i-1, game_num=i, fade_offset=xfades[file])
+            complex += setpts_fmt.format(v_num=i*2)
+            complex += xfade_fmt.format(v_num=i*2-1, game_num=i*2, fade_offset=xfades[file])
         complex += trim_fmt.format(
-            v_num=i, 
-            font=font_path, 
-            game_num=i+1, 
+            v_num=i*2, 
+            text_num=i*2+1,
             fade_in=text_starts[file]+FADE_IN_TIME,
             fade_in_duration=FADE_IN_DURATION,
             faded_in_end=text_starts[file]+FADE_IN_TIME+FADE_IN_DURATION,
@@ -71,8 +157,10 @@ def edit_videos(files, output_file, player, video_title, video_id):
         "ffmpeg"
     ]
 
-    for file in files:
+    for i, file in enumerate(files):
         ffmpeg_command.extend(["-i", file])
+        ffmpeg_command.extend(["-loop", "1"])
+        ffmpeg_command.extend(["-i", images[i]])
     
     ffmpeg_command.extend([
         "-filter_complex", complex,
@@ -94,3 +182,10 @@ def edit_videos(files, output_file, player, video_title, video_id):
     except subprocess.CalledProcessError as e:
         print(f"Error occurred during video processing: {e}")
         return "Error"
+
+if __name__ == "__main__":
+    edit_videos(["./recordings/Zen/2024-07-25_Zen Game 1.mp4"], 
+                "./edits/Zen.mp4",
+                "Zen",
+                "Test title",
+                "test_id")
