@@ -3,7 +3,6 @@ import os
 import subprocess
 import json
 import imgkit
-from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 from database import add_video
 
@@ -109,7 +108,9 @@ def text_pre_processing(player, n_replays):
     return images
 
 def edit_videos(files, output_file, player, video_title, video_id):
-    durations = { file: get_video_duration(file) for file in files }
+    if os.path.exists(output_file):
+        return "Success", True
+    durations = { file["path"]: file["duration"] for file in files }
 
     images = text_pre_processing(player, len(files))
 
@@ -126,47 +127,53 @@ def edit_videos(files, output_file, player, video_title, video_id):
     FADE_IN_DURATION=0.2
     FADE_OUT_DURATION=0.5
 
-    complex = """[0:v]trim=start=0.5,setpts=PTS-STARTPTS[vx0];
+    complex = """[0:v]trim=start=0.5,setpts=PTS-STARTPTS,fps=60[vx0];
         """
-    trim_fmt = """[{text_num}:v]fade=in:st={fade_in}:d={fade_in_duration}:alpha=1,fade=out:st={fade_out}:d={fade_out_duration}:alpha=1[v{v_num}ov];
-                [vx{v_num}][v{v_num}ov]overlay=shortest=1:x=0:y=0:format=auto[v{v_num}text];
+    trim_fmt = """[{text_num}:v]fade=in:st={fade_in}:d={fade_in_duration}:alpha=1,fade=out:st={fade_out}:d={fade_out_duration}:alpha=1,fps=60[v{v_num}ov];
+                [vx{v_num}][v{v_num}ov]overlay=shortest=1:x=0:y=0:format=auto[v{text_num}text];
         """
-    setpts_fmt = """[{v_num}:v]setpts=PTS-STARTPTS[v{v_num}];
+    setpts_fmt = """[{v_num}:v]setpts=PTS-STARTPTS,fps=60[v{v_num}];
         """
     xfade_fmt = """[v{v_num}text][v{game_num}]xfade=transition=fade:duration=0.5:offset={fade_offset}[vx{game_num}];
         """
+    curr_text_num = 0
     for i, file in enumerate(files):
+        path = file["path"]
         if i > 0:
             complex += setpts_fmt.format(v_num=i*2)
-            complex += xfade_fmt.format(v_num=i*2-1, game_num=i*2, fade_offset=xfades[file])
+            complex += xfade_fmt.format(v_num=i*2-1, game_num=i*2, fade_offset=xfades[path])
+        curr_text_num = i*2+1
         complex += trim_fmt.format(
             v_num=i*2, 
-            text_num=i*2+1,
-            fade_in=text_starts[file]+FADE_IN_TIME,
+            text_num=curr_text_num,
+            fade_in=text_starts[path]+FADE_IN_TIME,
             fade_in_duration=FADE_IN_DURATION,
-            faded_in_end=text_starts[file]+FADE_IN_TIME+FADE_IN_DURATION,
-            fade_out=text_starts[file]+TEXT_DUR+FADE_IN_TIME+FADE_IN_DURATION,
+            faded_in_end=text_starts[path]+FADE_IN_TIME+FADE_IN_DURATION,
+            fade_out=text_starts[path]+TEXT_DUR+FADE_IN_TIME+FADE_IN_DURATION,
             fade_out_duration=FADE_OUT_DURATION,
-            fade_out_end=text_starts[file]+TEXT_DUR+FADE_IN_TIME+FADE_IN_DURATION+FADE_OUT_DURATION
+            fade_out_end=text_starts[path]+TEXT_DUR+FADE_IN_TIME+FADE_IN_DURATION+FADE_OUT_DURATION
         )
             
     
-    complex += "[v{game_num}text]fade=t=out:st={fade_out_start}:d=1".format(game_num=len(files)-1, fade_out_start=sum(durations.values())-(0.5*(len(files)-1)))
+    complex += "[v{game_num}text]fade=t=out:st={fade_out_start}:d=1".format(game_num=curr_text_num, fade_out_start=sum(durations.values())-(0.5*(len(files)-1)))
 
     ffmpeg_command = [
-        "ffmpeg"
+        "ffmpeg",
+        "-hwaccel", "nvdec"
     ]
 
     for i, file in enumerate(files):
-        ffmpeg_command.extend(["-i", file])
+        ffmpeg_command.extend(["-i", file["path"]])
         ffmpeg_command.extend(["-loop", "1"])
         ffmpeg_command.extend(["-i", images[i]])
     
     ffmpeg_command.extend([
         "-filter_complex", complex,
-        "-c:v", "libx264",
+        "-c:v", "h264_nvenc",
         "-y", output_file
     ])
+
+    print(" ".join([str(x) for x in ffmpeg_command]))
 
     try:
         subprocess.run(ffmpeg_command, check=True)
@@ -178,13 +185,13 @@ def edit_videos(files, output_file, player, video_title, video_id):
             "title": video_title
         }
         add_video(video)
-        return "Success"
+        return "Success", False
     except subprocess.CalledProcessError as e:
         print(f"Error occurred during video processing: {e}")
-        return "Error"
+        return "Error", False
 
 if __name__ == "__main__":
-    edit_videos(["./recordings/Zen/2024-07-25_Zen Game 1.mp4"], 
+    edit_videos([{"path": "./recordings/Zen/2024-07-25_Zen Game 1.mp4", "duration": 400}], 
                 "./edits/Zen.mp4",
                 "Zen",
                 "Test title",

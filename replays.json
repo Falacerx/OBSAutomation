@@ -1,31 +1,1122 @@
 [
     {
-        "link": "https://ballchasing.com/api/replays/4ed51872-8d86-48a4-b18f-3614b9e28f4d",
+        "id": "7b6436ed-3e5e-4146-bb56-62e1d7a0026c",
+        "link": "https://ballchasing.com/api/replays/7b6436ed-3e5e-4146-bb56-62e1d7a0026c",
+        "date": "2024-07-26T16:56:39+02:00",
         "blue": {
             "players": [
                 {
-                    "name": "smashy",
+                    "name": "T7LM",
                     "platform": "steam",
-                    "id": "76561199026492829"
+                    "id": "76561199033743889"
                 },
                 {
-                    "name": "Primix",
+                    "name": "Nass",
                     "platform": "steam",
-                    "id": "76561199026000338"
+                    "id": "76561198838703744"
                 }
             ]
         },
         "orange": {
             "players": [
                 {
-                    "name": "Radosin",
+                    "name": "zen",
                     "platform": "steam",
-                    "id": "76561199009010912"
+                    "id": "76561198144145654"
+                },
+                {
+                    "name": "insp1re",
+                    "platform": "steam",
+                    "id": "76561198428353857"
+                }
+            ]
+        }
+    },
+    {
+        "id": "2a31001b-5046-4fb3-ac36-5bcf8f8bb8ff",
+        "link": "https://ballchasing.com/api/replays/2a31001b-5046-4fb3-ac36-5bcf8f8bb8ff",
+        "date": "2024-07-26T00:40:53+02:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "Jup.",
+                    "platform": "steam",
+                    "id": "76561198286120378"
+                },
+                {
+                    "name": "ThO.",
+                    "platform": "steam",
+                    "id": "76561198340137769"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "ExoTiiK",
+                    "platform": "steam",
+                    "id": "76561198258466111"
                 },
                 {
                     "name": "zen",
                     "platform": "steam",
                     "id": "76561198144145654"
+                }
+            ]
+        }
+    },
+    {
+        "id": "3f7d5652-b029-48fa-b7a1-3d2bde376a4d",
+        "link": "https://ballchasing.com/api/replays/3f7d5652-b029-48fa-b7a1-3d2bde376a4d",
+        "date": "2024-07-26T00:09:08+02:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "ExoTiiK",
+                    "platform": "steam",
+                    "id": "76561198258466111"
+                },
+                {
+                    "name": "Extra",
+                    "platform": "steam",
+                    "id": "76561198387068637"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                },
+                {
+                    "name": "oKayM",
+                    "platform": "steam",
+                    "id": "76561198058043645"
+                }
+            ]
+        }
+    },
+    {
+        "id": "a41bd1e9-4540-4099-b0e0-3c9b2d0d3ecc",
+        "link": "https://ballchasing.com/api/replays/a41bd1e9-4540-4099-b0e0-3c9b2d0d3ecc",
+        "date": "2024-07-25T15:52:32+01:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "ExoTiiK",
+                    "platform": "steam",
+                    "id": "76561198258466111"
+                },
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "draldop",
+                    "platform": "steam",
+                    "id": "76561199031413358"
+                },
+                {
+                    "name": "ringa",
+                    "platform": "steam",
+                    "id": "76561199032474913"
+                }
+            ]
+        }
+    },
+    {
+        "id": "993599f2-2e8f-4737-8d73-31615247667e",
+        "link": "https://ballchasing.com/api/replays/993599f2-2e8f-4737-8d73-31615247667e",
+        "date": "2024-07-23T22:57:50+02:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "ExoTiiK",
+                    "platform": "steam",
+                    "id": "76561198258466111"
+                },
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "Vatira",
+                    "platform": "steam",
+                    "id": "76561198960239428"
+                },
+                {
+                    "name": "Mat.",
+                    "platform": "steam",
+                    "id": "76561198151775989"
+                }
+            ]
+        }
+    },
+    {
+        "id": "ea45ae6b-5164-4e2d-bcb2-05365d7c8d5b",
+        "link": "https://ballchasing.com/api/replays/ea45ae6b-5164-4e2d-bcb2-05365d7c8d5b",
+        "date": "2024-07-20T23:52:50+02:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                },
+                {
+                    "name": "yujin",
+                    "platform": "steam",
+                    "id": "76561198257520039"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "sedou10x",
+                    "platform": "steam",
+                    "id": "76561198261764796"
+                },
+                {
+                    "name": "Syracks",
+                    "platform": "steam",
+                    "id": "76561198313792336"
+                }
+            ]
+        }
+    },
+    {
+        "id": "f4ce85d7-f904-42c7-b847-51420d30f9e5",
+        "link": "https://ballchasing.com/api/replays/f4ce85d7-f904-42c7-b847-51420d30f9e5",
+        "date": "2024-07-20T00:10:18+02:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "insp1re",
+                    "platform": "steam",
+                    "id": "76561198428353857"
+                },
+                {
+                    "name": "ejby",
+                    "platform": "steam",
+                    "id": "76561198300536450"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                },
+                {
+                    "name": "Atow Rikow!",
+                    "platform": "steam",
+                    "id": "76561198289610054"
+                }
+            ]
+        }
+    },
+    {
+        "id": "ae2042b0-3c6b-4b82-9581-04b0d6333514",
+        "link": "https://ballchasing.com/api/replays/ae2042b0-3c6b-4b82-9581-04b0d6333514",
+        "date": "2024-07-19T22:49:42+02:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "Ghaazi",
+                    "platform": "steam",
+                    "id": "76561198300085588"
+                },
+                {
+                    "name": "oKayM",
+                    "platform": "steam",
+                    "id": "76561198058043645"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "Atow Rikow!",
+                    "platform": "steam",
+                    "id": "76561198289610054"
+                },
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                }
+            ]
+        }
+    },
+    {
+        "id": "168d0e16-46c2-4d4e-a419-8a434396acd4",
+        "link": "https://ballchasing.com/api/replays/168d0e16-46c2-4d4e-a419-8a434396acd4",
+        "date": "2024-07-19T22:00:30+02:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "Tms",
+                    "platform": "steam",
+                    "id": "76561198954456220"
+                },
+                {
+                    "name": "oKayM",
+                    "platform": "steam",
+                    "id": "76561198058043645"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                },
+                {
+                    "name": "VKSailen",
+                    "platform": "steam",
+                    "id": "76561198397457726"
+                }
+            ]
+        }
+    },
+    {
+        "id": "ca09323c-3cd8-4640-b579-ef50bbeebf60",
+        "link": "https://ballchasing.com/api/replays/ca09323c-3cd8-4640-b579-ef50bbeebf60",
+        "date": "2024-07-19T20:47:24+02:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                },
+                {
+                    "name": "Mat.",
+                    "platform": "steam",
+                    "id": "76561198151775989"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "vatira",
+                    "platform": "steam",
+                    "id": "76561198960239428"
+                },
+                {
+                    "name": "TTV.rlmouss",
+                    "platform": "steam",
+                    "id": "76561199049980354"
+                }
+            ]
+        }
+    },
+    {
+        "id": "724e808a-4a6e-49a1-8c8f-dc16277195fc",
+        "link": "https://ballchasing.com/api/replays/724e808a-4a6e-49a1-8c8f-dc16277195fc",
+        "date": "2024-07-18T19:20:30+02:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "Rysfox.",
+                    "platform": "steam",
+                    "id": "76561198368797759"
+                },
+                {
+                    "name": "maaivy",
+                    "platform": "steam",
+                    "id": "76561198171387163"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                },
+                {
+                    "name": "Mat.",
+                    "platform": "steam",
+                    "id": "76561198151775989"
+                }
+            ]
+        }
+    },
+    {
+        "id": "6a9af116-5da8-42d8-998b-4784fbb88f1e",
+        "link": "https://ballchasing.com/api/replays/6a9af116-5da8-42d8-998b-4784fbb88f1e",
+        "date": "2024-07-18T19:07:34+02:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                },
+                {
+                    "name": "oKayM",
+                    "platform": "steam",
+                    "id": "76561198058043645"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "maaivy",
+                    "platform": "steam",
+                    "id": "76561198171387163"
+                },
+                {
+                    "name": "MaRc_By_8.",
+                    "platform": "steam",
+                    "id": "76561198307356688"
+                }
+            ]
+        }
+    },
+    {
+        "id": "ad2010bc-4abb-4f0d-8663-2c03c61eaf97",
+        "link": "https://ballchasing.com/api/replays/ad2010bc-4abb-4f0d-8663-2c03c61eaf97",
+        "date": "2024-07-12T20:17:05+02:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "R w T",
+                    "platform": "steam",
+                    "id": "76561198107043447"
+                },
+                {
+                    "name": "Thyyder",
+                    "platform": "steam",
+                    "id": "76561198986759379"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                },
+                {
+                    "name": "Stade",
+                    "platform": "steam",
+                    "id": "76561198285832951"
+                }
+            ]
+        }
+    },
+    {
+        "id": "008cd565-7b30-4ee1-ae03-57395b2dd846",
+        "link": "https://ballchasing.com/api/replays/008cd565-7b30-4ee1-ae03-57395b2dd846",
+        "date": "2024-07-12T19:28:31+02:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "<3",
+                    "platform": "steam",
+                    "id": "76561199059832586"
+                },
+                {
+                    "name": "MaRc_By_8.",
+                    "platform": "steam",
+                    "id": "76561198307356688"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                },
+                {
+                    "name": "Syracks",
+                    "platform": "steam",
+                    "id": "76561198313792336"
+                }
+            ]
+        }
+    },
+    {
+        "id": "433b4448-428a-4efe-9a6c-58888343d81c",
+        "link": "https://ballchasing.com/api/replays/433b4448-428a-4efe-9a6c-58888343d81c",
+        "date": "2024-07-09T17:58:03+02:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "simas",
+                    "platform": "steam",
+                    "id": "76561198324207671"
+                },
+                {
+                    "name": "davoof",
+                    "platform": "steam",
+                    "id": "76561198353740533"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                },
+                {
+                    "name": "Radosinho",
+                    "platform": "steam",
+                    "id": "76561199009010912"
+                }
+            ]
+        }
+    },
+    {
+        "id": "16005a31-2ac7-43cf-95ea-db72f4e18cb2",
+        "link": "https://ballchasing.com/api/replays/16005a31-2ac7-43cf-95ea-db72f4e18cb2",
+        "date": "2024-07-07T16:57:17+02:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "davoof",
+                    "platform": "steam",
+                    "id": "76561198353740533"
+                },
+                {
+                    "name": "Fairy Peak!",
+                    "platform": "steam",
+                    "id": "76561198213713880"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                },
+                {
+                    "name": "juicy",
+                    "platform": "steam",
+                    "id": "76561199013030566"
+                }
+            ]
+        }
+    },
+    {
+        "id": "c3e63010-ecd8-43f4-a07f-125b296bde99",
+        "link": "https://ballchasing.com/api/replays/c3e63010-ecd8-43f4-a07f-125b296bde99",
+        "date": "2024-07-06T18:37:19+03:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                },
+                {
+                    "name": "regser",
+                    "platform": "steam",
+                    "id": "76561198820370430"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "juicy",
+                    "platform": "steam",
+                    "id": "76561199013030566"
+                },
+                {
+                    "name": "AztraL",
+                    "platform": "steam",
+                    "id": "76561198305338233"
+                }
+            ]
+        }
+    },
+    {
+        "id": "8f32aebd-1a6c-4ed0-bf81-a8d5149d475c",
+        "link": "https://ballchasing.com/api/replays/8f32aebd-1a6c-4ed0-bf81-a8d5149d475c",
+        "date": "2024-07-05T16:21:41+01:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                },
+                {
+                    "name": "nmj_c",
+                    "platform": "ps4",
+                    "id": "nmj_c"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "hunter",
+                    "platform": "steam",
+                    "id": "76561199000240670"
+                },
+                {
+                    "name": "velocity",
+                    "platform": "steam",
+                    "id": "76561198832133096"
+                }
+            ]
+        }
+    },
+    {
+        "id": "15c7e2ca-d949-4303-aa1f-c3830568b0cd",
+        "link": "https://ballchasing.com/api/replays/15c7e2ca-d949-4303-aa1f-c3830568b0cd",
+        "date": "2024-07-03T17:46:23+02:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "Syracks",
+                    "platform": "steam",
+                    "id": "76561198313792336"
+                },
+                {
+                    "name": "07",
+                    "platform": "steam",
+                    "id": "76561198271296807"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "Seikoo",
+                    "platform": "steam",
+                    "id": "76561199013057612"
+                },
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                }
+            ]
+        }
+    },
+    {
+        "id": "9e294433-b637-4cda-b063-a92f4c02860b",
+        "link": "https://ballchasing.com/api/replays/9e294433-b637-4cda-b063-a92f4c02860b",
+        "date": "2024-06-20T14:44:43+02:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                },
+                {
+                    "name": "Qtipz",
+                    "platform": "steam",
+                    "id": "76561199013055518"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "Jup.",
+                    "platform": "steam",
+                    "id": "76561198286120378"
+                },
+                {
+                    "name": "TempoH",
+                    "platform": "steam",
+                    "id": "76561198956605973"
+                }
+            ]
+        }
+    },
+    {
+        "id": "689f99b7-abd2-4393-b972-1a905fca4013",
+        "link": "https://ballchasing.com/api/replays/689f99b7-abd2-4393-b972-1a905fca4013",
+        "date": "2024-06-15T14:33:18+02:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "juicy",
+                    "platform": "steam",
+                    "id": "76561199013030566"
+                },
+                {
+                    "name": "inspire dop grr pow",
+                    "platform": "steam",
+                    "id": "76561198428353857"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                },
+                {
+                    "name": "itachi",
+                    "platform": "steam",
+                    "id": "76561198212117519"
+                }
+            ]
+        }
+    },
+    {
+        "id": "2bee60bd-a94a-4225-a31e-a975cd2abacc",
+        "link": "https://ballchasing.com/api/replays/2bee60bd-a94a-4225-a31e-a975cd2abacc",
+        "date": "2024-06-15T14:18:35+02:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                },
+                {
+                    "name": "itachi",
+                    "platform": "steam",
+                    "id": "76561198212117519"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "inspire dop grr pow",
+                    "platform": "steam",
+                    "id": "76561198428353857"
+                },
+                {
+                    "name": "Seikoo",
+                    "platform": "steam",
+                    "id": "76561199013057612"
+                }
+            ]
+        }
+    },
+    {
+        "id": "48231ef4-8daf-402a-8483-89da19019db4",
+        "link": "https://ballchasing.com/api/replays/48231ef4-8daf-402a-8483-89da19019db4",
+        "date": "2024-06-11T17:26:11+02:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "Chronomia",
+                    "platform": "steam",
+                    "id": "76561198264263696"
+                },
+                {
+                    "name": ".",
+                    "platform": "steam",
+                    "id": "76561199076692980"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                },
+                {
+                    "name": ".",
+                    "platform": "steam",
+                    "id": "76561199026492829"
+                }
+            ]
+        }
+    },
+    {
+        "id": "06fd62fb-663c-4d8d-bf5d-79515f096689",
+        "link": "https://ballchasing.com/api/replays/06fd62fb-663c-4d8d-bf5d-79515f096689",
+        "date": "2024-06-10T00:34:34+02:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                },
+                {
+                    "name": "Alpha54",
+                    "platform": "steam",
+                    "id": "76561198353133370"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "davoof",
+                    "platform": "steam",
+                    "id": "76561198353740533"
+                },
+                {
+                    "name": "arju",
+                    "platform": "steam",
+                    "id": "76561198361446159"
+                }
+            ]
+        }
+    },
+    {
+        "id": "33e97701-0638-42dc-96af-09a07a3d0efa",
+        "link": "https://ballchasing.com/api/replays/33e97701-0638-42dc-96af-09a07a3d0efa",
+        "date": "2024-06-07T23:04:07+02:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                },
+                {
+                    "name": "MinLoX",
+                    "platform": "steam",
+                    "id": "76561198858425076"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "cAbdllah",
+                    "platform": "steam",
+                    "id": "76561198979425239"
+                },
+                {
+                    "name": "Suspect",
+                    "platform": "steam",
+                    "id": "76561198251294600"
+                }
+            ]
+        }
+    },
+    {
+        "id": "e88d45e4-16eb-4347-9e66-4e50b440164c",
+        "link": "https://ballchasing.com/api/replays/e88d45e4-16eb-4347-9e66-4e50b440164c",
+        "date": "2024-06-07T15:03:04+01:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "Smokez",
+                    "platform": "steam",
+                    "id": "76561198799142654"
+                },
+                {
+                    "name": "Aiipa",
+                    "platform": "steam",
+                    "id": "76561198984014743"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                },
+                {
+                    "name": "AztraL",
+                    "platform": "steam",
+                    "id": "76561198305338233"
+                }
+            ]
+        }
+    },
+    {
+        "id": "871ee2d8-592a-4423-a63f-a53e97101ba1",
+        "link": "https://ballchasing.com/api/replays/871ee2d8-592a-4423-a63f-a53e97101ba1",
+        "date": "2024-06-03T16:28:27+01:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                },
+                {
+                    "name": "velocity",
+                    "platform": "steam",
+                    "id": "76561198832133096"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "Fairy Peak!",
+                    "platform": "steam",
+                    "id": "76561198213713880"
+                },
+                {
+                    "name": "Ghaazi",
+                    "platform": "steam",
+                    "id": "76561198300085588"
+                }
+            ]
+        }
+    },
+    {
+        "id": "4350280e-9b77-43dc-863c-63320aa37839",
+        "link": "https://ballchasing.com/api/replays/4350280e-9b77-43dc-863c-63320aa37839",
+        "date": "2024-05-31T14:39:42+02:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "wozyen.",
+                    "platform": "steam",
+                    "id": "76561197969711014"
+                },
+                {
+                    "name": "d",
+                    "platform": "steam",
+                    "id": "76561198827640192"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                },
+                {
+                    "name": "Vatira.",
+                    "platform": "steam",
+                    "id": "76561198960239428"
+                }
+            ]
+        }
+    },
+    {
+        "id": "17ff9a53-0998-4f47-976b-4877890ec494",
+        "link": "https://ballchasing.com/api/replays/17ff9a53-0998-4f47-976b-4877890ec494",
+        "date": "2024-05-31T00:51:49+02:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                },
+                {
+                    "name": "alemz",
+                    "platform": "steam",
+                    "id": "76561198358670051"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "Rezears",
+                    "platform": "steam",
+                    "id": "76561198994499073"
+                },
+                {
+                    "name": "ivn",
+                    "platform": "steam",
+                    "id": "76561198841499110"
+                }
+            ]
+        }
+    },
+    {
+        "id": "1ef0b094-141f-4cc8-ad8b-da547a948c7d",
+        "link": "https://ballchasing.com/api/replays/1ef0b094-141f-4cc8-ad8b-da547a948c7d",
+        "date": "2024-05-30T00:56:12+02:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                },
+                {
+                    "name": "Mikeboy",
+                    "platform": "steam",
+                    "id": "76561198369498607"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "fleikoo&",
+                    "platform": "steam",
+                    "id": "76561199077660351"
+                },
+                {
+                    "name": "Mat.",
+                    "platform": "steam",
+                    "id": "76561198151775989"
+                }
+            ]
+        }
+    },
+    {
+        "id": "e607c7bc-a404-42d7-a8e6-40f1485249ff",
+        "link": "https://ballchasing.com/api/replays/e607c7bc-a404-42d7-a8e6-40f1485249ff",
+        "date": "2023-07-27T19:52:53+02:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                },
+                {
+                    "name": "juicy",
+                    "platform": "steam",
+                    "id": "76561199013030566"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "noahsak1",
+                    "platform": "steam",
+                    "id": "76561198799994330"
+                },
+                {
+                    "name": "Tr3bla",
+                    "platform": "steam",
+                    "id": "76561198406569848"
+                }
+            ]
+        }
+    },
+    {
+        "id": "a92a6118-5585-47d3-a132-c2041bf7f04e",
+        "link": "https://ballchasing.com/api/replays/a92a6118-5585-47d3-a132-c2041bf7f04e",
+        "date": "2023-07-24T01:42:57+02:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "ejby",
+                    "platform": "steam",
+                    "id": "76561198300536450"
+                },
+                {
+                    "name": "creamyy",
+                    "platform": "steam",
+                    "id": "76561198081753469"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                },
+                {
+                    "name": "itachi",
+                    "platform": "steam",
+                    "id": "76561198212117519"
+                }
+            ]
+        }
+    },
+    {
+        "id": "25bdd660-29c0-47a3-8314-9b8920434fe5",
+        "link": "https://ballchasing.com/api/replays/25bdd660-29c0-47a3-8314-9b8920434fe5",
+        "date": "2023-07-12T22:15:54+03:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "ExoTiiK",
+                    "platform": "steam",
+                    "id": "76561198258466111"
+                },
+                {
+                    "name": "Kerian.",
+                    "platform": "epic",
+                    "id": "e14b3c74c0b74630baedbf5a7a88d1df"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                },
+                {
+                    "name": "Abdullah",
+                    "platform": "steam",
+                    "id": "76561199037779944"
+                }
+            ]
+        }
+    },
+    {
+        "id": "139bb1d3-3354-431b-a267-bf8669075bf8",
+        "link": "https://ballchasing.com/api/replays/139bb1d3-3354-431b-a267-bf8669075bf8",
+        "date": "2023-06-30T20:08:51-04:00",
+        "blue": {
+            "players": [
+                {
+                    "name": "zen",
+                    "platform": "steam",
+                    "id": "76561198144145654"
+                },
+                {
+                    "name": "frosty",
+                    "platform": "steam",
+                    "id": "76561198351218981"
+                }
+            ]
+        },
+        "orange": {
+            "players": [
+                {
+                    "name": "RadoDop",
+                    "platform": "steam",
+                    "id": "76561199009010912"
+                },
+                {
+                    "name": "Taroco",
+                    "platform": "steam",
+                    "id": "76561198118155495"
                 }
             ]
         }

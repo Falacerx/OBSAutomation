@@ -85,21 +85,21 @@ def handle_recording(output_path, player, id):
     output_directory = setup_recording_directory(player)
 
     retry = 0
-    max_retries = 10
+    max_retries = 30
     video_path = f"{output_directory}/{recording_file_name}"
     while retry < max_retries:
         try:
+            print(f"Moving recording from {output_path} to {video_path}...")
+            time.sleep(30)
             shutil.move(output_path, video_path)
-        except PermissionError as e:
-            time.sleep(20)
+            break
+        except:
             print("Recording is still being written, retrying...")
             retry += 1
             continue
-        except FileNotFoundError as e:
-            break
 
     if retry == max_retries:
-        print("Failed to move recording after 10 retries")
+        print(f"Failed to move recording after {max_retries} retries")
 
     print(f"Recording saved as {recording_file_name}")
 
@@ -191,7 +191,7 @@ async def process_replays(player, rl_client):
             "player": player,
             "recording_date": datetime.now().isoformat(),
             "replay_date": replay['date'],
-            "url": video_path
+            "url": replay_url
         }
         add_recording(recording)
 
