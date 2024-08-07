@@ -13,7 +13,7 @@ PORT = os.getenv("OBS_PORT")
 PASSWORD = os.getenv("OBS_PASSWORD")
 
 def start_recording():
-    ws = obsws(HOST, PORT, PASSWORD)
+    ws = obsws(HOST, PORT)
     ws.connect()
 
     try:

@@ -92,7 +92,7 @@ async def main():
     recording_directory = setup_recording_directory(player)
     finished_directory = setup_finished_directory(player)
             
-    # await process_replays(player, rl_client)
+    await process_replays(player, rl_client)
 
     video_paths = [f"{recording_directory}/{f}" for f in os.listdir(recording_directory) if f.endswith(".mp4")]
     valid_groups = group_videos(video_paths)

@@ -127,21 +127,24 @@ def edit_videos(files, output_file, player, video_title, video_id):
     FADE_IN_DURATION=0.2
     FADE_OUT_DURATION=0.5
 
-    complex = """[0:v]trim=start=0.5,setpts=PTS-STARTPTS,fps=60[vx0];
+    complex = """[0:v]trim=start=0.5,setpts=PTS-STARTPTS,fps=60[vx0]; 
+                [0:a]atrim=start=0.5,asetpts=PTS-STARTPTS[ax0];
         """
     trim_fmt = """[{text_num}:v]fade=in:st={fade_in}:d={fade_in_duration}:alpha=1,fade=out:st={fade_out}:d={fade_out_duration}:alpha=1,fps=60[v{v_num}ov];
                 [vx{v_num}][v{v_num}ov]overlay=shortest=1:x=0:y=0:format=auto[v{text_num}text];
         """
     setpts_fmt = """[{v_num}:v]setpts=PTS-STARTPTS,fps=60[v{v_num}];
+                    [{v_num}:a]atrim=start=0.5,asetpts=PTS-STARTPTS[ax{v_num}];
         """
     xfade_fmt = """[v{v_num}text][v{game_num}]xfade=transition=fade:duration=0.5:offset={fade_offset}[vx{game_num}];
+                    [ax{prev_a_num}][ax{game_num}]acrossfade=d=0.5[ax{a_num}];
         """
     curr_text_num = 0
     for i, file in enumerate(files):
         path = file["path"]
         if i > 0:
             complex += setpts_fmt.format(v_num=i*2)
-            complex += xfade_fmt.format(v_num=i*2-1, game_num=i*2, fade_offset=xfades[path])
+            complex += xfade_fmt.format(v_num=i*2-1, prev_a_num=(i-1)*2, a_num=i*2+1, game_num=i*2, fade_offset=xfades[path])
         curr_text_num = i*2+1
         complex += trim_fmt.format(
             v_num=i*2, 
@@ -155,7 +158,9 @@ def edit_videos(files, output_file, player, video_title, video_id):
         )
             
     
-    complex += "[v{game_num}text]fade=t=out:st={fade_out_start}:d=1".format(game_num=curr_text_num, fade_out_start=sum(durations.values())-(0.5*(len(files)-1)))
+    complex += "[v{game_num}text]fade=t=out:st={fade_out_start}:d=1[v]".format(game_num=curr_text_num, fade_out_start=sum(durations.values())-(0.5*(len(files)+1)))
+
+    print(complex)
 
     ffmpeg_command = [
         "ffmpeg",
@@ -169,7 +174,19 @@ def edit_videos(files, output_file, player, video_title, video_id):
     
     ffmpeg_command.extend([
         "-filter_complex", complex,
+        "-map", "[v]",
+        "-map", f"[ax{curr_text_num}]",
         "-c:v", "h264_nvenc",
+        "-preset", "slow",
+        "-profile:v", "high",
+        "-b:v", "40000k",
+        "-maxrate", "40000k",
+        "-bufsize", "40000k",
+        "-g", "50",
+        "-bf", "2",
+        "-rc", "vbr_hq",
+        "-c:a", "aac",
+        "-b:a", "192k",
         "-y", output_file
     ])
 
@@ -184,15 +201,15 @@ def edit_videos(files, output_file, player, video_title, video_id):
             "player": player,
             "title": video_title
         }
-        add_video(video)
+        # add_video(video)
         return "Success", False
     except subprocess.CalledProcessError as e:
         print(f"Error occurred during video processing: {e}")
         return "Error", False
 
 if __name__ == "__main__":
-    edit_videos([{"path": "./recordings/Zen/2024-07-25_Zen Game 1.mp4", "duration": 400}], 
-                "./edits/Zen.mp4",
+    edit_videos([{"path": "./recordings/Zen/2a31001b-5046-4fb3-ac36-5bcf8f8bb8ff.mp4", "duration": 185}, {"path": "./recordings/Zen/7b6436ed-3e5e-4146-bb56-62e1d7a0026c.mp4", "duration": 315}], 
+                "./edits/Zen_test.mp4",
                 "Zen",
                 "Test title",
                 "test_id")
