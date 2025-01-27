@@ -8,7 +8,6 @@ import requests
 import os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import pyautogui
 from pywinauto import findwindows
 import pywinauto
 from rl_ws import RLWebSocketClient

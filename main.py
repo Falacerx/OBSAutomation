@@ -126,18 +126,11 @@ async def main():
             if uploaded_video is not None and uploaded_video.get("uploaded", False):
                 is_uploaded = True
 
-            # if result == "Success" and not is_uploaded:
-            #     upload.upload_video(edited_video_path, player, video_title)
-            #     update_video_with_uploaded_status(video_id, uploaded=True)
+            if result == "Success" and not is_uploaded:
+                upload.upload_video(edited_video_path, player, video_title)
+                update_video_with_uploaded_status(video_id, uploaded=True)
 
 
 
 if __name__ == "__main__":
     asyncio.run(main())
-
-
-"""
-PROBLEMS: 
-- Audio desync
-- Recording pixelates
-"""

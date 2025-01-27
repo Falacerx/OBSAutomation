@@ -3,7 +3,7 @@ import sys
 import time
 
 import logging
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.INFO)
 
 sys.path.append('../')
 from obswebsocket import obsws, requests
@@ -12,6 +12,11 @@ HOST = os.getenv("OBS_HOST")
 PORT = os.getenv("OBS_PORT")
 PASSWORD = os.getenv("OBS_PASSWORD")
 
+def test_connection():
+    ws = obsws(HOST, PORT, PASSWORD)
+    ws.connect()
+    ws.disconnect()
+
 def start_recording():
     ws = obsws(HOST, PORT)
     ws.connect()
@@ -19,7 +24,6 @@ def start_recording():
     try:
         print("Starting recording")
         resp = ws.call(requests.StartRecord())
-        print(resp)
 
     except KeyboardInterrupt:
         pass
@@ -42,3 +46,9 @@ def stop_recording():
     ws.disconnect()
 
     return output_path
+
+def main():
+    test_connection()
+
+if __name__ == "__main__":
+    main()

@@ -160,8 +160,6 @@ def edit_videos(files, output_file, player, video_title, video_id):
     
     complex += "[v{game_num}text]fade=t=out:st={fade_out_start}:d=1[v]".format(game_num=curr_text_num, fade_out_start=sum(durations.values())-(0.5*(len(files)+1)))
 
-    print(complex)
-
     ffmpeg_command = [
         "ffmpeg",
         "-hwaccel", "nvdec"
@@ -201,7 +199,7 @@ def edit_videos(files, output_file, player, video_title, video_id):
             "player": player,
             "title": video_title
         }
-        # add_video(video)
+        add_video(video)
         return "Success", False
     except subprocess.CalledProcessError as e:
         print(f"Error occurred during video processing: {e}")
