@@ -6,44 +6,41 @@ import logging
 logging.basicConfig(level=logging.INFO)
 
 sys.path.append('../')
-from obswebsocket import obsws, requests
+
+import obsws_python as obs
 
 HOST = os.getenv("OBS_HOST")
 PORT = os.getenv("OBS_PORT")
 PASSWORD = os.getenv("OBS_PASSWORD")
 
 def test_connection():
-    ws = obsws(HOST, PORT, PASSWORD)
-    ws.connect()
-    ws.disconnect()
+    start_recording()
+    time.sleep(1)
+    p = stop_recording()
+    print(p)
 
 def start_recording():
-    ws = obsws(HOST, PORT)
-    ws.connect()
+    ws = obs.ReqClient(host=HOST, port=PORT, password=PASSWORD, timeout=3)
 
     try:
         print("Starting recording")
-        resp = ws.call(requests.StartRecord())
+        ws.start_record()
 
     except KeyboardInterrupt:
         pass
 
-    ws.disconnect()
-
 def stop_recording():
-    ws = obsws(HOST, PORT, PASSWORD)
-    ws.connect()
+    ws = obs.ReqClient(host=HOST, port=PORT, password=PASSWORD, timeout=3)
 
     output_path = None
     try:
         print("Stopping recording")
-        resp = ws.call(requests.StopRecord())
-        output_path = resp.datain.get("outputPath", None)
+        resp = ws.stop_record()
+        output_path = resp.output_path
 
     except KeyboardInterrupt:
         pass
 
-    ws.disconnect()
 
     return output_path
 
