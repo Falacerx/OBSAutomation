@@ -6,3 +6,5 @@
 /config
 /text_images
 /finished
+*.json
+moveback.py
